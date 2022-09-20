@@ -74,10 +74,13 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
 //#region Second_variant_yargs #
 /**
  * example:
- * node index --action getAll
- * node index --action getById --id 1
- * node index --action delById --id 1
+ * node index --action getAll or node index --action="getAll"
+ * node index --action getById --id 1 or
+ * node index --action delById --id 1 or 
+ * 
  * node index --action addNew --id null --name "Allen Raymond" --email nulla.ante@vestibul.co.uk --phone "(992) 914-3792"
+ * or
+ * * node index --action="addNew" --id="null" --name="Allen Raymond" --email="nulla.ante@vestibul.co.uk" --phone="(992) 914-3792"
  */
 // const arr = hideBin(process.argv);
 // const {argv} = yargs(arr);
@@ -85,9 +88,6 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
 //#endregion #
 
 //#region Third_variant_commander #
-/**
- * 
- */
 program
     .option("-a, --action <type>")
     .option("-i, --id <type>")
