@@ -80,7 +80,7 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
  * 
  * node index --action addNew --id null --name "Allen Raymond" --email nulla.ante@vestibul.co.uk --phone "(992) 914-3792"
  * or
- * * node index --action="addNew" --id="null" --name="Allen Raymond" --email="nulla.ante@vestibul.co.uk" --phone="(992) 914-3792"
+ * node index --action="addNew" --id="null" --name="Allen Raymond" --email="nulla.ante@vestibul.co.uk" --phone="(992) 914-3792"
  */
 // const arr = hideBin(process.argv);
 // const {argv} = yargs(arr);
@@ -97,5 +97,17 @@ program
 program.parse();
 const options = program.opts();
 
-invokeAction(options);
+// const start = async (argv) => {
+//     try {
+//         await invokeAction(argv);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// };
+
+// start(options);
+
+(async()=>{
+    await invokeAction(options)
+    })()
 //#endregion
