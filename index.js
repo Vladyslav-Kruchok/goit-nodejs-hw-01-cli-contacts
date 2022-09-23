@@ -97,6 +97,7 @@ program
 program.parse();
 const options = program.opts();
 
+//run variant 1
 // const start = async (argv) => {
 //     try {
 //         await invokeAction(argv);
@@ -107,6 +108,7 @@ const options = program.opts();
 
 // start(options);
 
+//run variant 2
 (async()=>{
     await invokeAction(options)
     })()
